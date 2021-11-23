@@ -14,8 +14,19 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = User(context: viewContext)
+            newItem.firstName = "Test"
+            newItem.lastName = "Testesen"
+            newItem.postcode = "0253"
+            newItem.city = "Oslo"
+            newItem.email = "test@test.no"
+            newItem.state = "Oslo"
+            newItem.country = "Norway"
+            newItem.latitude = "0.0"
+            newItem.longitude = "0.0"
+            newItem.street = "Osloveien 1"
+            newItem.thumbnail = URL.init(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-nzyal&psig=AOvVaw3PIj7-JIIGnH0xCSkTjc8b&ust=1637754459751000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDUrvi0rvQCFQAAAAAdAAAAABAD")
+            newItem.largeThumbnail = URL.init(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-nzyal&psig=AOvVaw3PIj7-JIIGnH0xCSkTjc8b&ust=1637754459751000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJDUrvi0rvQCFQAAAAAdAAAAABAD")
         }
         do {
             try viewContext.save()
@@ -52,4 +63,27 @@ struct PersistenceController {
             }
         })
     }
+    
+    func save() {
+         let context = container.viewContext
+
+         if context.hasChanges {
+             do {
+                 try context.save()
+             } catch {
+                 debugPrint(error)
+             }
+         }
+     }
+     
+     func count() -> Int {
+         let context = container.viewContext
+         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+         do {
+             return try context.count(for: fetchRequest)
+         } catch {
+             debugPrint(error)
+         }
+         return 0
+     }
 }
