@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct SettingsView: View {
+    let persistenceController = PersistenceController.shared
+    
+    @State private var apiSeed: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack{
+                Form{
+                    TextField(
+                        "Type in new apiseed",
+                        text:$apiSeed
+                    )
+                        .onSubmit {
+                            persistenceController.saveSeed(apiSeed)
+                        }
+                    
+                }
+                .navigationTitle("Change Api seed")
+                
+            }
+        }
     }
-}
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
+    
+    
+    struct SettingsView_Previews: PreviewProvider {
+        static var previews: some View {
+            SettingsView()
+        }
     }
+    
 }

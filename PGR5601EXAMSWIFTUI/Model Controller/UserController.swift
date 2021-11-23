@@ -19,8 +19,8 @@ class UserController {
                 debugPrint("Will not fetch new users")
                 return
             }
-            
-            guard let url = URL(string: "https://randomuser.me/api/?results=\(usersToFetch)&seed=ios&nat=no") else {
+            let seed = persistenceController.fetchSeed()
+            guard let url = URL(string: "https://randomuser.me/api/?results=\(usersToFetch)&seed=\(seed)&nat=no") else {
                 print("Invalid url...")
                 return
             }
@@ -43,6 +43,7 @@ class UserController {
         
         func persistUser(userDto: UserDto) {
             let newItem = User(context: persistenceController.container.viewContext)
+            newItem.id = UUID()
             newItem.firstName = userDto.name.first
             newItem.lastName = userDto.name.last
             newItem.age = Int64(userDto.dob.age)
@@ -57,5 +58,6 @@ class UserController {
             newItem.thumbnail = URL.init(string: userDto.picture.thumbnail)
             newItem.email = userDto.email
         }
+    
     }
 

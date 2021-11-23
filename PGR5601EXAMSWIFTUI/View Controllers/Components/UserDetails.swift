@@ -28,6 +28,7 @@ struct UserDetails: View {
                     Text(user.lastName!)
                 }
                 Divider()
+                }.padding(.horizontal, 12)
                 Group {
                     HStack(alignment: .center) {
                         Text("Age").font(.subheadline)
@@ -35,6 +36,8 @@ struct UserDetails: View {
                         Text("\(user.age)")
                     }
                 Divider()
+                }.padding(.horizontal, 12)
+                Group {
                     HStack(alignment: .center) {
                     Text("Email").font(.subheadline)
                     Spacer()
@@ -66,4 +69,4 @@ struct UserDetails: View {
         }
     }
 }
-}
+
