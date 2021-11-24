@@ -14,8 +14,8 @@ Hoppet over siste oppgave pga mangle på tid.
 
 
 Refranser: 
-https://www.youtube.com/watch?v=rjHBINtpKA8&t=1120s
-https://www.youtube.com/watch?v=a1KuQs5dw24&t=195s
-https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started
-https://www.udemy.com/course/ios-13-app-development-bootcamp/
-https://www.patreon.com/iosacademy/posts
+- https://www.youtube.com/watch?v=rjHBINtpKA8&t=1120s
+- https://www.youtube.com/watch?v=a1KuQs5dw24&t=195s
+- https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started
+- https://www.udemy.com/course/ios-13-app-development-bootcamp/
+- https://www.patreon.com/iosacademy/posts
