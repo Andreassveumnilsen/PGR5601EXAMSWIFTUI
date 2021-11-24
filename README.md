@@ -1,5 +1,5 @@
 # PGR5601EXAMSWIFTUI
-
+Kandidat: 2042
 App kodet i SwiftUI.  
 Prosjektformat Xcode 13.0 
 
