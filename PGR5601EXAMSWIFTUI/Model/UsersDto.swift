@@ -2,7 +2,7 @@
 //  UserDto.swift
 //  PGR5601EXAMSWIFTUI
 //
-//  Created by Andreas on 02/11/2021.
+//  Created by Andreas on 11/11/2021.
 //
 
 import Foundation
@@ -19,7 +19,7 @@ struct UsersDto: Codable {
         var phone: String
         var cell: String
         var picture: Picture
-        var nat: String
+        
     }
 
     struct Name: Codable {

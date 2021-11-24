@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  PGR5601EXAMSWIFTUI
 //
-//  Created by Andreas on 02/11/2021.
+//  Created by Andreas on 11/11/2021.
 //
 
 import CoreData
@@ -17,7 +17,7 @@ struct PersistenceController {
             let newItem = User(context: viewContext)
             newItem.firstName = "Test"
             newItem.lastName = "Testesen"
-            newItem.postcode = "0253"
+            newItem.postcode = "0175"
             newItem.city = "Oslo"
             newItem.email = "test@test.no"
             newItem.state = "Oslo"
@@ -120,7 +120,7 @@ struct PersistenceController {
                 container.viewContext.delete(objectData)
             }
         } catch let error {
-            print("Detlete all data in \(entity) error :", error)
+            print("Delete all data in \(entity) error :", error)
         }
     }
 }

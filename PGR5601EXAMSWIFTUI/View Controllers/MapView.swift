@@ -21,7 +21,7 @@ struct MapView: View {
         animation: .default)
     private var users: FetchedResults<User>
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.911163, longitude: 10.745064), span: MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100) )
     
     
     
